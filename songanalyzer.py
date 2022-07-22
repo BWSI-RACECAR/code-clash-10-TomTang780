@@ -48,7 +48,7 @@ class Solution:
         #         if words[i][-3:] == words[i+1][-3:]:
         #             rhym += 1
         # return first_letter + "=" + repeat + ", " + rhym + " rhyming words"
-        words = lyric.split
+        words = lyric.split(" ")
         first_letters = []
         alit_letters = []
         letter_count = []
