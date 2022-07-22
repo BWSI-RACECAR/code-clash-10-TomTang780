@@ -67,16 +67,21 @@ class Solution:
                 first_letters.append(words[i][0])
 
         for j in range(len(words)):
-            if(words[j][-3:] in filtered_endings):
+            if(words[j][-3:] in word_endings):
                 if(words[j][-3:] in filtered_endings):
                     rhyme_amount[filtered_endings.index(words[j][-3:])] += 1
                 else:
-                    filtered_endings.apped(words[j][-3:])
+                    filtered_endings.append(words[j][-3:])
                     rhyme_amount.append(2)
             else:
                 word_endings.append(words[j][-3:])
         for k in range(len(rhyme_amount)):
             rhyme_count += rhyme_amount[k]
+
+        final_string = ""
+        for q in range(len(alit_letters)):
+            final_string = final_string + "{letter}={number}, ".format(letter = alit_letters[q],number=letter_count[1])
+        return final_string + "{rhymes} rhyming words".format(rhymes=rhyme_count)
         pass
 
 def main():
