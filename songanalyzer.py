@@ -80,7 +80,7 @@ class Solution:
 
         final_string = ""
         for q in range(len(alit_letters)):
-            final_string = final_string + "{letter}={number}, ".format(letter = alit_letters[q],number=letter_count[1])
+            final_string=final_string + "{letter}={number}, ".format(letter = alit_letters[q],number=letter_count[q])
         return final_string + "{rhymes} rhyming words".format(rhymes=rhyme_count)
         pass
 
