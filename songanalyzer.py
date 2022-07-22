@@ -37,17 +37,46 @@ class Solution:
         # return: string 
         
         # TODO: Write code below to return a string with the solution to the prompt
-        rhym = 0
-        repeat = 0
-        first_letter = words[0]
-        words = lyric.split()
-        for i in lyric:
-            if words[i][0] == words[i+1][0]:
-                repeat += 1
-            if len(words) > 3:
-                if words[i][-3:] == words[i+1][-3:]:
-                    rhym += 1
-        return first_letter + "=" + repeat + ", " + rhym + " rhyming words"
+        # rhym = 0
+        # repeat = 0
+        # first_letter = words[0]
+        # words = lyric.split()
+        # for i in lyric:
+        #     if words[i][0] == words[i+1][0]:
+        #         repeat += 1
+        #     if len(words) > 3:
+        #         if words[i][-3:] == words[i+1][-3:]:
+        #             rhym += 1
+        # return first_letter + "=" + repeat + ", " + rhym + " rhyming words"
+        words = lyric.split
+        first_letters = []
+        alit_letters = []
+        letter_count = []
+        word_endings = []
+        filtered_endings = []
+        rhyme_amount = []
+        rhyme_count = 0
+        for i in range(len(words)):
+            if(words[i][0] in first_letters):
+                if(words[i][0] in alit_letters):
+                    letter_count[alit_letters.index(words[i][0])] += 1
+                else:
+                    alit_letters.append(words[i][0])
+                    letter_count.append(2)
+            else:
+                first_letters.append(words[i][0])
+
+        for j in range(len(words)):
+            if(words[j][-3:] in filtered_endings):
+                if(words[j][-3:] in filtered_endings):
+                    rhyme_amount[filtered_endings.index(words[j][-3:])] += 1
+                else:
+                    filtered_endings.apped(words[j][-3:])
+                    rhyme_amount.append(2)
+            else:
+                word_endings.append(words[j][-3:])
+        for k in range(len(rhyme_amount)):
+            rhyme_count += rhyme_amount[k]
         pass
 
 def main():
